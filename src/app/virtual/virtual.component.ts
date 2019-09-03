@@ -8,7 +8,7 @@ import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 })
 export class VirtualComponent implements OnInit {
 
- /*  @ViewChild('CdkVirtualScrollViewport', CdkFixedSizeVirtualScroll) viewport: CdkVirtualScrollViewport; */
+  @ViewChild(CdkVirtualScrollViewport, { static: false }) viewport: CdkVirtualScrollViewport;
   personas = Array(500).fill(0);
 
   constructor() { }
@@ -17,6 +17,14 @@ export class VirtualComponent implements OnInit {
     console.log(this.personas);
   }
   irFinal() {
+    this.viewport.scrollToIndex(this.personas.length);
+  }
 
+  irInicio() {
+    this.viewport.scrollToIndex(0);
+  }
+
+  irMitad() {
+    this.viewport.scrollToIndex(this.personas.length / 2);
   }
 }

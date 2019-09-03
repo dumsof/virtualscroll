@@ -1,11 +1,24 @@
 <h1>Virtual Scroll</h1>
 <hr>
-<!-- inicio del virtual scroll, se necesita colocar siempre el ancho de los componentes -->
+<!-- inicio del virtual scroll, se necesita colocar siempre el ancho de los componentes 
+Lo importante de este scroll virtual es que carga los datos en el html solo lo que se estan
+presentando.
+-->
 
 <div class="row">
     <div class="col">
         <button (click)="irFinal()" class="btn btn-primary">
             Ir al final
+        </button>
+    </div>
+    <div class="col text-center">
+        <button (click)="irMitad()" class="btn btn-info">
+            Ir al Mitad
+        </button>
+    </div>
+    <div class="col text-right">
+        <button (click)="irInicio()" class="btn btn-dark">
+            Ir al Inicio
         </button>
     </div>
 </div>
